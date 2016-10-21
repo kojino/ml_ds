@@ -1,0 +1,25 @@
+<div class="col-md-offset-2 col-md-8">
+  <%= render 'users/search' %>
+
+  <p id="notice"><%= notice %></p>
+  <div class="result-wrapper col-md-12">
+		<table class="table table-filter">
+			<tbody>
+        <% @users.each do |user| %>
+          <!-- <%= link_to('#') do %> -->
+  					<tr>
+  						<td>
+  							<div class="media">
+                  <%= link_to image_tag('https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg'), user, :class=>"pull-left"%>
+  									<span class="media-meta pull-right"><%= user.role %></span>
+  									<h3><%= "#{user.first_name} #{user.last_name}" %></h3>
+  									<p><%= user.about_me %></p>
+  							</div>
+  						</td>
+  					</tr>
+          <!-- <% end %> -->
+        <% end %>
+			</tbody>
+		</table>
+  </div>
+</div>
